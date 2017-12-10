@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "E-Commerce";
+}
+
+<br />
+<br />
+
+<table class="table table-striped table-responsive table-hover" id="tblclientes">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("NOME")
+            </th>
+            <th>
+                @Html.DisplayName("CPF")
+            </th>
+            <th>
+                @Html.DisplayName("ENDEREÇO")
+            </th>
+            <th>
+                @Html.DisplayName("E-MAIL")
+            </th>
+            <th>
+                @Html.DisplayName("DATA DE CADASTRO")
+            </th>
+         <th></th>
+        </tr>
+    </thead>
+    <tbody id="limparTabela"></tbody>
+</table>
+
+@Html.Partial("_Cliente")
+@Html.Partial("_Pedido")
+@Html.Partial("_Endereco")
+@Html.Partial("_MeusPedidos")
+
+<div>
+    <i id="wait" class="fa fa-refresh fa-spin fa-5x fa-fw"></i>
+</div>
+
+
+@section Scripts
+{    
+   <link href="~/Content/Cliente/cliente.css" rel="stylesheet" />
+   <link href="~/Content/Pedido/pedido.css" rel="stylesheet" />
+   <script src="~/Scripts/Cliente/cliente.js"></script>
+   <script src="~/Scripts/Pedido/pedido.js"></script>
+   <link href="~/Content/font-awesome.css" rel="stylesheet" />
+ }

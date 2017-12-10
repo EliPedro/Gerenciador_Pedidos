@@ -1,0 +1,52 @@
+﻿<div class="container">
+    <div class="modal fade" data-keyboard="false" data-backdrop="static" id="mdPedidos" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><strong>Novo Pedido</strong></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal">
+
+                        <div class="form-group">
+                            <label for="txtProduto" class="control-label col-md-2">Produto</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" rows="4" cols="50" autofocus id="txtProduto" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtDescricao" class="control-label col-md-2">Descrição</label>
+                            <div class="col-md-10">
+                                <textarea class="form-control" rows="4" cols="50" autofocus id="txtDescricao"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtCliente" class="control-label col-md-2">Cliente</label>
+                            <div class="col-md-10" id="divCliente">
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="nValor" class="control-label col-md-2">Valor</label>
+                            <div class="col-md-10">
+                                <input  min="1" class="form-control" type="number" id="nValor" value="0.0" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="nQuantidade" class="control-label col-md-2">Quantidade</label>
+                            <div class="col-md-10">
+                                <input min="1" class="form-control" type="number" value="0.0" id="nQuantidade" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" value="0" id="btnCadastrarPedido">Cadastrar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
