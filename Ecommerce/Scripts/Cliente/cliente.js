@@ -66,12 +66,13 @@ function limparFormularioCliente() {
     $("#txtNome").focus();
     $("#txtCPF").val("");
     $("#txtEmail").val("");
-    $("#erroCPF").css("display","none");
+    $("#erroNome").css("display", "none");
+    $("#erroNome").html("");
+    $("#erroCPF").css("display", "none");
     $("#erroCPF").html("");
 
     limparCEP();   
 }
-
 
 function limparCEP()
 {
@@ -98,21 +99,24 @@ $("#btnCadastrarCliente").click(function () {
     var txtNumero = $("#txtNumero").val();
     
     if (txtNome == "")
-        erro += 1;
-    if (txtEmail == "")
-        erro += 1;
-    if (txtCEP == "")
-        erro += 1;
-    if (txtCPF == "") 
-        erro += 1;
-    if (txtNumero == "") 
-        erro += 1;
-
-    if (erro > 0)
     {
-        limparCEP();
-        return;
+        $("#erroNome").css("display", "block");
+        $("#erroNome").html("O nome é obrigátorio.");
+
+        erro += 1;
     }
+      
+
+    if (txtCPF == "")
+    {
+        $("#erroCPF").css("display", "block");
+        $("#erroCPF").html("O CPF é obrigátorio.");
+        
+        erro += 1;
+    }
+
+
+    if (erro > 0) { limparCEP(); return; }
     var json =
         {
             Nome: txtNome,

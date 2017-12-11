@@ -3,6 +3,13 @@
     color:red;
 }
 
+
+#erroNome {
+    display: none;
+    color: red;
+}
+
+
 #wait {
     display: none;
     width: 69px;
