@@ -1,10 +1,6 @@
 ﻿using Dominio.Pedidos.Pedidos;
 using Ecommerce.Aplicacao.UnitOfWork.Interface;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace Api.Pedidos.Controllers
@@ -20,12 +16,15 @@ namespace Api.Pedidos.Controllers
         }
 
         [HttpPost]
+        [AcceptVerbs("GET", "POST")]
+
         public IEnumerable<dynamic> ObterPedidosPorPorCliente(int id)
         {
             return _unitOfWork.PedidoRepository.ObterPedidosPorPorCliente(id);
         }
 
         [HttpPost]
+        [AcceptVerbs("GET", "POST")]
         public void Adicionar(Pedido pedido)
         {
 

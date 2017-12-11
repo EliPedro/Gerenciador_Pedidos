@@ -44,7 +44,7 @@ function obterClientes()
 {
     var url = "http://localhost:52647/api/Clientes/ObterTodos";
     $.ajax({
-        type: "POST",
+        type: "GET",
         url: url,
         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
         data: '{}',

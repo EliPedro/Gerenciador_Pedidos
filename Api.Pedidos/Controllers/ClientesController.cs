@@ -5,14 +5,10 @@ using Dominio.Pedidos.DTO;
 using Ecommerce.Aplicacao.UnitOfWork.Interface;
 using System;
 using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
-using System.ServiceModel.Activation;
 using System.Web.Http;
 
 namespace Api.Pedidos.Controllers
 {
-    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class ClientesController : ApiController
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -22,13 +18,14 @@ namespace Api.Pedidos.Controllers
             _unitOfWork = unitOfWork;
         }
 
-
-        [HttpPost]
+        [AcceptVerbs("GET", "POST")]
+        [HttpGet]
         public IEnumerable<Cliente> ObterTodos()
         {
             return _unitOfWork.ClienteRepository.ObterTodos();
         }
-        
+
+        [AcceptVerbs("GET", "POST")]
         [HttpPost]
         public void Adicionar(ClienteDTO cliente)
         {
@@ -39,6 +36,7 @@ namespace Api.Pedidos.Controllers
 
         }
 
+        [AcceptVerbs("GET", "POST")]
         [HttpPost]
         public Int32 EhValidoCPF(string cpf)
         {
@@ -50,6 +48,7 @@ namespace Api.Pedidos.Controllers
             return (Int32)Erro.INVALIDO;
         }
 
+        [AcceptVerbs("GET", "POST")]
         [HttpPost]
         public Endereco ObterEndereco(int id)
         {
